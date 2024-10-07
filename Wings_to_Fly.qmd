@@ -1,0 +1,104 @@
+---
+title: "Wings to Fly"
+subtitle: "Analyzing Delta Airlines: A Study of Late Arrivals Across U.S. Airports"
+author: "Felix Jena"
+format: 
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: "See code"
+execute: 
+  warning: false
+editor_options: 
+  chunk_output_type: inline
+---
+### Research Questions:
+Which Origin Airport Minimizes the Chances of Late Arrival?\
+Which Destination Airport is the Worst for Arrival Delays?
+
+### Libraries being used:
+```{r}
+library(tidyverse)
+library(nycflights13)
+```
+
+### Filtering for Delta Airlines
+```{r}
+
+delta_flights <- flights %>%
+  filter(carrier == "DL", !is.na(arr_delay))
+
+```
+
+### Which Origin Airport Minimizes the Chances of Late Arrival?
+```{r}
+# If Arrival is late
+delta_flights <- delta_flights %>%
+  mutate(late_arrival = if_else(arr_delay > 0, "Late", "On Time"))
+
+# Proportion late arrivals summary
+origin_late_prop <- delta_flights %>%
+  group_by(origin) %>%
+  summarize(total_flights = n(),
+            late_arrivals = sum(late_arrival == "Late"),
+            proportion_late = late_arrivals / total_flights) %>%
+  arrange(proportion_late)
+
+
+ggplot(origin_late_prop, aes(x = reorder(origin, -proportion_late), y = proportion_late * 100, fill = origin)) +
+  geom_bar(stat = "identity", color = "black") +
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) +  # Percentage
+  labs(title = "Late Arrivals by Origin (Delta Airlines)",
+       x = "Airport",
+       y = "Late Arrivals") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels
+
+
+```
+The best airport for minimizing the chances of a late arrival is JFK (John F. Kennedy), where only 30% of the flights arrive late.\
+LGA (LaGuardia) comes second, with a 35% late arrival rate.\
+EWR (Newark) has the highest proportion of late arrivals at 40%, meaning it’s less reliable in avoiding delays.\
+
+
+### Which Destination Airport is the Worst for Arrival Delays?
+```{r}
+# Summarize Average arrival delay
+dest_avg_delay <- delta_flights %>%
+  group_by(dest) %>%
+  summarize(avg_arr_delay = mean(arr_delay, na.rm = TRUE)) %>%
+  arrange(desc(avg_arr_delay))
+
+
+ggplot(dest_avg_delay, aes(x = reorder(dest, -avg_arr_delay), y = avg_arr_delay)) +
+  geom_bar(stat = "identity", fill = "steelblue", color = "black") +
+  labs(title = "Average Arrival Delay by Destination (Delta Airlines)",
+       x = "Destination Airport",
+       y = "Average Arrival Delay (minutes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotates x-axis labels
+
+```
+Jackson Hole Airport (JAC) has the worst average arrival delay at 11 minutes, making it the destination with the most consistent delays among the analyzed airports.\
+San Antonio International Airport (SAT) follows closely with an average delay of 8.08 minutes, and Hartsfield-Jackson Atlanta International Airport (ATL) ranks third with an average delay of 7.42 minutes.\
+On the opposite side of the spectrum, Nashville International Airport (BNA) and Indianapolis International Airport (IND) have the best on-time performance, with average early arrivals of -27 minutes and -26.5 minutes, respectively.\
+
+### Conclusion:
+If you are flying Delta Airlines and want to minimize your chances of a late arrival, choose JFK as your airport.\
+Jackson Hole (JAC) and San Antonio (SAT) have the worst average arrival delays, with 11 minutes and 8.08 minutes. Hartsfield-Jackson Atlanta (ATL) also ranks among the worst with an average delay of 7.42 minutes. Avoid these destinations if minimizing delays is important for your travel plans.
+
+
+
