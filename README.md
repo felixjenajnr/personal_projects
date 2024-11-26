@@ -28,5 +28,6 @@ Welcome to my GitHub repository, where I showcase a collection of personal proje
 Feel free to reach out if you have any questions or feedback:
 
 - **Name**: Felix Jena
+- **Email** felixjenajnr@gmail.com
 - **GitHub**: [felixjenajnr](https://github.com/felixjenajnr)
-- **LinkedIn**: [Felix Jena](https://www.linkedin.com/in/felixjena/)
+- **LinkedIn**: [Felix Jena](https://www.linkedin.com/in/felixjenajnr/)
