@@ -29,5 +29,5 @@ Feel free to reach out if you have any questions or feedback:
 
 - **Name**: Felix Jena
 - **Email** felixjenajnr@gmail.com
-- **GitHub**: [felixjenajnr](https://github.com/felixjenajnr)
+- **GitHub**: [Felix Jena](https://github.com/felixjenajnr)
 - **LinkedIn**: [Felix Jena](https://www.linkedin.com/in/felixjenajnr/)
