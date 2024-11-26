@@ -30,49 +30,50 @@ editor_options:
 **Phone:** (385) 461 4285  
 **Email:** felixjenajnr@gmail.com  
 **LinkedIn:** [Felix Jena LinkedIn](https://www.linkedin.com/in/felixjenajnr)
+**GitHub:** [Felix Jena GitHub](https://github.com/felixjenajnr)
 
-## EDUCATION
-**Business Analytics**  
-Brigham Young University - Idaho, Rexburg, Idaho  
-**Minor:** Finance (September 2022 - December 2024)  
-**Relevant Coursework:**  
-- Business Analytics (Power BI and Tableau), SQL  
-- Advanced Financial Management, Database Design and Development  
-- Programming with Functions, Data Science Programming, Statistics with R  
-**Hackathon Project:** Developed a data pipeline from Qualtrics surveys to a database, focusing on employee feedback analysis.
+## PROFILE SUMMARY
+- Results-driven Analyst skilled in financial modeling, variance analysis, predictive analytics and loan covenant compliance to support strategic decision-making and risk management.
+- Proficient in tools such as Excel, Powerpoint, Power BI, and SQL to generate dynamic dashboards and streamline financial reporting processes.
+- Experienced in managing end-to-end data workflows, performing scenario planning, and delivering actionable insights to executive leadership.
+- Adept at leveraging data-driven strategies to optimize budgeting, forecasting, and resource allocation.
+- Known for collaborating cross-functionally to align financial objectives with corporate goals and delivering measurable business outcomes.
 
 ## SKILLS
-- **Technical Skills:** Microsoft Office Suite, Microsoft Power BI, Tableau, Python, MySQL, RStudio  
-- **Soft Skills:** Leadership, Communication, Analytical Thinking, Project Management, Ethical and Data Privacy  
-- **Other Skills:** Pipeline Development, Data Management, Business Analytics  
+- **Technical Skills:** Microsoft Excel, Power BI, Tableau, MySQL, R, SQL, SaaS financial software, Trello, Teams.
+- **Financial Analysis Skills:** Budgeting, Financial Modeling, Forecasting, Data Visualization, Loan covenant compliance.
+- **Soft Skills:** Leadership, Communication, Analytical Thinking, Project Management, Problem-Solving. 
 
 ## EXPERIENCE
 
 **Data Management Intern**  
 _**Maverik Inc., Salt Lake City, Utah (May 2024 - Current)**_  
-- Developed data inventory of 15-20 Maverik systems, identified and resolved data inconsistencies  
-- Designed data flow diagrams for Maverik systems, applying data validation protocols  
-- Created documentation for data management practices, workflows, and system interactions  
-- Performed data corrections, tier adjustments, and CSR assistance with Nitro enrollments  
-- Created presentations highlighting key milestones for IT leadership  
+- Developed and maintained a data inventory for 15 systems, improving data integrity and accuracy.
+- Designed data flow diagrams and applied data validation protocols across systems to streamline interactions.
+- Collaborated with technical and non-technical teams to document best practices for data management and
+system integration.
+- Delivered executive-level presentations showcasing project milestones and key performance metrics.
 
 **Systems and Innovations Team Coordinator**  
 _**Brigham Young University - Idaho, Rexburg, Idaho (Sep 2022 - May 2024)**_ 
-- Led daily operations, ensuring project accountability and on-time delivery (95% rate)  
-- Increased project efficiency by 20% by implementing new tracking protocols  
-- Trained employees, reducing onboarding time by 30% and improving adherence  
+- Directed branch operations, achieving a 20% growth in deposit volume and a 15% increase in lending volume.
+- Analyzed client preferences, adjusted sales strategies, and improved customer loyalty by 15%.
+- Reduced onboarding approval processing times by 25% through compliance coordination.
+- Supervised and mentored a team of 10+, enhancing productivity through targeted training.
 
 **Assistant Branch Manager**  
 _**Capitec Bank, Pretoria, South Africa (Jun 2017 - Jul 2022)**_ 
-- Managed daily branch operations, achieving sales targets and exceeding profit goals  
-- Supervised, trained, and evaluated a team of 10, increasing team productivity  
-- Reduced turnover by 20% through implementing positive operational standards  
-- Conducted performance appraisals and coordinated compensation activities, increasing employee satisfaction by 15%
+- Directed branch operations, achieving a 20% growth in deposit volume and a 15% increase in lending volume.
+- Analyzed client preferences, adjusted sales strategies, and improved customer loyalty by 15%.
+- Reduced onboarding approval processing times by 25% through compliance coordination.
+- Supervised and mentored a team of 10+, enhancing productivity through targeted training.
 
-## HOBBIES AND INTERESTS
-- **Soccer:** Played semi-pro for Orchards United FC (2017-2022)  
-- **Go-Karting:** Competed in A&D Utah Motorsports Karting Championship (2023 season)  
-- **Mountain Biking:** Competed in several tournaments  
-
+## EDUCATION
+**Bachelors of Science Business Analytics**  (September 2022 - December 2024) 
+Brigham Young University - Idaho, Rexburg, Idaho  
+- Minor in Finance 
+- Completed in under 3 years (Accelerated Program) 
+- Relevant Coursework: Business Analytics, Power BI, Tableau, Excel, SQL, Advanced Financial Management,
+Database Design and Development, Programming with Functions, Data Science Programming, Statistics with R.
 
 
