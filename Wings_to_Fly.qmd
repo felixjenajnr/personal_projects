@@ -1,8 +1,9 @@
+
 ---
-title: "Wings to Fly"
-subtitle: "Analyzing Delta Airlines: A Study of Late Arrivals Across U.S. Airports"
+title: "Wings To Fly"
+subtitle: "An Analysis of Delta airlines flights"
 author: "Felix Jena"
-format: 
+format:
   html:
     self-contained: true
     page-layout: full
@@ -20,31 +21,45 @@ format:
         source: false
         toggle: true
         caption: "See code"
+    keep-md: true 
 execute: 
   warning: false
 editor_options: 
   chunk_output_type: inline
 ---
+
+
 ### Research Questions:
 Which Origin Airport Minimizes the Chances of Late Arrival?\
 Which Destination Airport is the Worst for Arrival Delays?
 
 ### Libraries being used:
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 library(tidyverse)
 library(nycflights13)
 ```
+:::
+
 
 ### Filtering for Delta Airlines
-```{r}
 
+::: {.cell}
+
+```{.r .cell-code}
 delta_flights <- flights %>%
   filter(carrier == "DL", !is.na(arr_delay))
-
 ```
+:::
+
 
 ### Which Origin Airport Minimizes the Chances of Late Arrival?
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 # If Arrival is late
 delta_flights <- delta_flights %>%
   mutate(late_arrival = if_else(arr_delay > 0, "Late", "On Time"))
@@ -66,16 +81,23 @@ ggplot(origin_late_prop, aes(x = reorder(origin, -proportion_late), y = proporti
        y = "Late Arrivals") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels
-
-
 ```
-The best airport for minimizing the chances of a late arrival is JFK (John F. Kennedy), where only 30% of the flights arrive late.\
+
+::: {.cell-output-display}
+![](Wings_to_Fly_files/figure-html/unnamed-chunk-3-1.png){width=672}
+:::
+:::
+
+The best origin airport for minimizing the chances of a late arrival is JFK (John F. Kennedy), where only 30% of the flights arrive late.\
 LGA (LaGuardia) comes second, with a 35% late arrival rate.\
 EWR (Newark) has the highest proportion of late arrivals at 40%, meaning it’s less reliable in avoiding delays.\
 
 
 ### Which Destination Airport is the Worst for Arrival Delays?
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 # Summarize Average arrival delay
 dest_avg_delay <- delta_flights %>%
   group_by(dest) %>%
@@ -90,15 +112,17 @@ ggplot(dest_avg_delay, aes(x = reorder(dest, -avg_arr_delay), y = avg_arr_delay)
        y = "Average Arrival Delay (minutes)") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotates x-axis labels
-
 ```
-Jackson Hole Airport (JAC) has the worst average arrival delay at 11 minutes, making it the destination with the most consistent delays among the analyzed airports.\
-San Antonio International Airport (SAT) follows closely with an average delay of 8.08 minutes, and Hartsfield-Jackson Atlanta International Airport (ATL) ranks third with an average delay of 7.42 minutes.\
-On the opposite side of the spectrum, Nashville International Airport (BNA) and Indianapolis International Airport (IND) have the best on-time performance, with average early arrivals of -27 minutes and -26.5 minutes, respectively.\
+
+::: {.cell-output-display}
+![](Wings_to_Fly_files/figure-html/unnamed-chunk-4-1.png){width=672}
+:::
+:::
+
+PBI (Palm Beach International Airport) is the worst destination for arrival delays, with an average delay of 18.5 minutes.\
+ATL (Hartsfield-Jackson Atlanta International Airport) is also notable for delays, with an average delay of 15.2 minutes.\
+MIA (Miami International Airport), FLL (Fort Lauderdale), and TPA (Tampa) round out the top 5 with delays ranging from 12.4 to 14.8 minutes.\
 
 ### Conclusion:
-If you are flying Delta Airlines and want to minimize your chances of a late arrival, choose JFK as your airport.\
-Jackson Hole (JAC) and San Antonio (SAT) have the worst average arrival delays, with 11 minutes and 8.08 minutes. Hartsfield-Jackson Atlanta (ATL) also ranks among the worst with an average delay of 7.42 minutes. Avoid these destinations if minimizing delays is important for your travel plans.
-
-
-
+If you are flying Delta Airlines and want to minimize your chances of a late arrival, choose EWR as your origin.\
+If you are worried about arrival delays, avoid flights to PBI and ATL, which are the worst for average arrival delays.
